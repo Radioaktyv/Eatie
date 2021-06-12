@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>LOGIN PAGE</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+
+            <img src="/img/logo.svg">
+
+
+        </div>
+        <div class="login-container">
+            <form class="login" action="login" method="POST">
+                
+                <input name="email" type="text" placeholder="email@email.com">
+                <input name="password" type="password" placeholder="password">
+                {{#if errorMessage}}
+                <div><!-- tutaj cos dodam-->{{errorMessage}}</div>
+                {{/if}}
+                <div class="buttons">
+                    <button type="submit">LOGIN</button>
+
+                    <button type = "button" onclick="location.href='register'">
+                        SIGN UP
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+<template id="project-template">
+    <div id="">
+        <img src="">
+        <div>
+            <h2>title</h2>
+            <p>description</p>
+            <div class="social-section">
+                <i class="fas fa-heart"> 0</i>
+                <i class="fas fa-minus-square"> 0</i>
+            </div>
+        </div>
+    </div>
+</template>

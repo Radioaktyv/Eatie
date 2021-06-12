@@ -14,15 +14,15 @@
         <main>
           {{>header}}
             <section class="projects">
-                
-                    <div id="<?= $restaurant->getId(); ?>">
-                        <img src="public/img/uploads/<?= $restaurant->getImage(); ?>">
+                {{#each restaurants}}
+                    <div>
+                        <img src={{img}}>
                         <div>
-                            
-
+                            <h2>{{name}}</h2>
+                            <p>{{description}}</p>
                         </div>
                     </div>
-                
+                {{/each}}
             </section>
 
         </main>

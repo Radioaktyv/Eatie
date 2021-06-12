@@ -1,5 +1,6 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, raw, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import { Image } from 'src/model/image';
 
 export type RestaurantDocument = Restaurant & Document;
 
@@ -8,17 +9,13 @@ export class Restaurant {
     @Prop({unique: true})
     name: string;
     @Prop()
-    img:
-    {
-        data: Buffer,
-        contentType: String
-    };
+    img:Image;
     @Prop()
     description:string;
     @Prop()
-    lat:DoubleRange;
+    lat:number;
     @Prop()
-    lng:DoubleRange;
+    lng:number;
 
 
 }

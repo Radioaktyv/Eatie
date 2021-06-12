@@ -9,47 +9,4 @@ export class AppController {
   root(@Res() res) {
     res.redirect("auth/login");
   }
-
-  
-  @Get('add_restaurant')
-    @Render('add_restaurant')
-    add_restaurant(){
-      const object = {
-        //users:this.appService.getHello()
-      }
-      return object
-    }
-    @Get('map')
-    @Render('map')
-    map(){
-      const object = {
-       // users:this.appService.getHello()
-      }
-      return object
-    }
-    @Get('notification')
-    @Render('notification')
-    notification(){
-      const object = {
-        //users:this.appService.getHello()
-      }
-      return object
-    }
-    @Get('order_history')
-    @Render('order_history')
-    order_history(){
-      const object = {
-        //users:this.appService.getHello()
-      }
-      return object
-    }
-    @Get('restaurants')
-    @Render('restaurants')
-    restaurants(){
-      const object = {
-        //users:this.appService.getHello()
-      }
-      return object
-    }
-
 }

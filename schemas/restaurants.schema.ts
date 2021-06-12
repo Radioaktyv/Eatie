@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-export type UserDocument = Restaurant & Document;
+export type RestaurantDocument = Restaurant & Document;
 
 @Schema()
 export class Restaurant {
@@ -22,4 +22,4 @@ export class Restaurant {
 
 
 }
-export const UserSchema = SchemaFactory.createForClass(Restaurant);
+export const RestaurantSchema = SchemaFactory.createForClass(Restaurant);

@@ -7,6 +7,7 @@ import { User, UserSchema } from 'schemas/users.schema';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
+import { RestaurantsModule } from './restaurants/restaurants.module';
 
 @Module({
   imports: [
@@ -16,7 +17,9 @@ import { AuthModule } from './auth/auth.module';
       }) 
     }),
     
-    AuthModule
+    AuthModule,
+    
+    RestaurantsModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -5,6 +5,9 @@ import { AppModule } from './app.module';
 import * as dotenv from 'dotenv';
 import * as hbs from 'hbs';
 import { ValidationPipe } from '@nestjs/common';
+import * as cookieParser from 'cookie-parser';
+import * as session from 'express-session';
+
 //import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 dotenv.config();
 //process.env.CONNECTION_STRING
@@ -18,6 +21,14 @@ async function bootstrap() {
   app.setViewEngine('hbs');
   hbs.registerPartials(join(__dirname, '..', '/views/partials'));
   //app.useGlobalPipes(new ValidationPipe());
+  //Ciasteczka
+  //app.use(cookieParser(process.env.COOKIE_SECRET));
+  app.use(session({
+    secret: process.env.COOKIE_SECRET,
+    resave: true,
+    saveUninitialized: false,
+  }))
+
   await app.listen(3000);
 }
 bootstrap();

@@ -1,4 +1,6 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Body, Controller, Get, Post, Render, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { RestaurantRegister } from 'src/model/restaurant';
 import { RestaurantsService } from './restaurants.service';
 
 @Controller('restaurants')
@@ -43,6 +45,13 @@ export class RestaurantsController {
         return {
             restaurants: await this.restaurantsService.findAll()
         }
+    }
+    @Post('add')
+    @UseInterceptors(FileInterceptor('img'))
+    async add(@Body() restaurantRegister: RestaurantRegister, @Res() res, @UploadedFile() file: Express.Multer.File) {
+        console.log(file);
+        await this.restaurantsService.upload(restaurantRegister, file);
+        return res.redirect("/");
     }
 
 }
